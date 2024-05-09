@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp>{
           style: TextStyle(
             color: Colors.white)), 
         backgroundColor: Color.fromRGBO(65, 65, 179, 1),),
-      body: (_questionIndex < _questionsList.length)? Quiz(_questionsList, _questionIndex, _answerQuestion)
+      body: (_questionIndex < _questionsList.length)? Quiz(questionsList: _questionsList, questionIndex: _questionIndex, answerQuestion: _answerQuestion,)
       : const Center(child: Text('Thx for your dirty answers, boy!'),),
     ),);
   }
