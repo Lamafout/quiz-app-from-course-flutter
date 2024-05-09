@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import './quiz.dart';
 
 void main(){
   runApp(MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatefulWidget{
 class _MyAppState extends State<MyApp>{
   var _questionIndex = 0;
   
-  static const questionsList = [
+  static const _questionsList = [
     {
       'questionText': 'Do you wanna slap my cute ass?',
       'answers': ['Ye..Yes, Button-waifu... Mrs Button-waifu!', 'Wha... WHAT?! No, God, I wantn\'t!']
@@ -41,21 +40,15 @@ class _MyAppState extends State<MyApp>{
   @override
   Widget build(BuildContext context){
 
-    return MaterialApp(home: Scaffold(
+    return MaterialApp(
+      home: Scaffold(
       appBar: AppBar(
         title: Text('Is is text in the Text Widget in the Scaffold Widget in the MaterialApp Widget LOL', 
           style: TextStyle(
             color: Colors.white)), 
         backgroundColor: Color.fromRGBO(65, 65, 179, 1),),
-      body: (_questionIndex < questionsList.length)? Column(
-        children: <Widget>[
-          Question(questionsList[_questionIndex]['questionText']),
-
-          ...(questionsList[_questionIndex]['answers'] as List<String>).map((answer)  {
-            return Answer(answer, _answerQuestion);
-          }).toList()
-
-        ],) : const Center(child: Text('Thx for your dirty answers, boy!'),),
+      body: (_questionIndex < _questionsList.length)? Quiz(_questionsList, _questionIndex, _answerQuestion)
+      : const Center(child: Text('Thx for your dirty answers, boy!'),),
     ),);
   }
 }
