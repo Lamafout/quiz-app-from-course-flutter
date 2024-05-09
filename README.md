@@ -1,6 +1,6 @@
-# test_application
+# Simple Quiz app
 
-A new Flutter project.
+Application what I'm dev for teaching Flutter and Dart
 
 ## Getting Started
 
