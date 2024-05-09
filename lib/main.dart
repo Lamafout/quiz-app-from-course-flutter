@@ -17,19 +17,30 @@ class _MyAppState extends State<MyApp>{
   var _questionIndex = 0;
   
   static const _questionsList = [
-    {
-      'questionText': 'Do you wanna slap my cute ass?',
-      'answers': ['Ye..Yes, Button-waifu... Mrs Button-waifu!', 'Wha... WHAT?! No, God, I wantn\'t!']
-    },
-    {
-      'questionText': 'Do you wanna lick my sweaty legs?',
-      'answers': ['Yes! Give me your sweet legs, darling! UwU', 'Fkoff, girl!']
-    },
-    {
-      'questionText': 'Where do you wanna be in my hot bed?',
-      'answers': ['Up! 0_0', 'Down...', 'Outside! >_<']
-    },
-  ];
+  {
+    'questionText': 'Do you wanna slap my cute ass?',
+    'answers': [
+      {'text': 'Ye..Yes, Button-waifu... Mrs Button-waifu!', 'score': 0},
+      {'text': 'Wha... WHAT?! No, God, I wantn\'t!', 'score': 1}
+    ]
+  },
+  {
+    'questionText': 'Do you wanna lick my sweaty legs?',
+    'answers': [
+      {'text': 'Yes Give me your sweet legs, darling UwU', 'score': 0},
+      {'text': 'Fkoff, girl!', 'score': 2}
+    ]
+  },
+  {
+    'questionText': 'Where do you wanna be in my hot bed?',
+    'answers': [
+      {'text': 'Up 0_0', 'score': 0},
+      {'text': 'Down...', 'score': -1},
+      {'text': 'Outside >_<', 'score': 1}
+    ]
+  },
+];
+
 
   void _answerQuestion(){
     setState(() {
