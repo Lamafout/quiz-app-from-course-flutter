@@ -33,11 +33,9 @@ class _MyAppState extends State<MyApp>{
   ];
 
   void _answerQuestion(){
-    if (_questionIndex + 1 < 3){
-      setState(() {
-        _questionIndex++;
-      });
-    }
+    setState(() {
+      _questionIndex++;
+    });
   }
 
   @override
@@ -49,7 +47,7 @@ class _MyAppState extends State<MyApp>{
           style: TextStyle(
             color: Colors.white)), 
         backgroundColor: Color.fromRGBO(65, 65, 179, 1),),
-      body: Column(
+      body: (_questionIndex < questionsList.length)? Column(
         children: <Widget>[
           Question(questionsList[_questionIndex]['questionText']),
 
@@ -57,7 +55,7 @@ class _MyAppState extends State<MyApp>{
             return Answer(answer, _answerQuestion);
           }).toList()
 
-        ],),
+        ],) : const Center(child: Text('Thx for your dirty answers, boy!'),),
     ),);
   }
 }
