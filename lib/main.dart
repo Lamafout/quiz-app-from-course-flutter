@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './question.dart';
+import './answer.dart';
 
 void main(){
   runApp(MyApp());
@@ -47,7 +48,9 @@ class _MyAppState extends State<MyApp>{
             onPressed: _answerQuestion,),
           ElevatedButton(
             onPressed: _answerQuestion, 
-            child: Text('No, pls, click to me, my Master! 0_0'))
+            child: Text('No, pls, click to me, my Master! 0_0')),
+
+          Answer(_answerQuestion)
         ],),
     ),);
   }

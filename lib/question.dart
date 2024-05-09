@@ -11,8 +11,9 @@ class Question extends StatelessWidget {
       child: Text(questionText, 
         style: TextStyle(
         color: Color.fromARGB(255, 11, 6, 157), 
-        fontSize: 18), 
+        fontSize: 23), 
         textAlign: TextAlign.center,),
-      width: double.infinity,);
+      width: double.infinity,
+      margin: EdgeInsets.only(top: 15.0, bottom: 15.0),);
   }
 }
