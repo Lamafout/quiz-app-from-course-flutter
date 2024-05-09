@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Answer extends StatelessWidget {
 
+  final String answerText;
   final onPressedFunc;
 
-  const Answer(this.onPressedFunc);
+  Answer(this.answerText, this.onPressedFunc);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          textStyle: const TextStyle(
-            color: Colors.white), 
-          backgroundColor: Colors.blue[900]),
+        style: 
+        ButtonStyle(
+          overlayColor: MaterialStateProperty.all(Color.fromARGB(255, 81, 74, 146)),
+          backgroundColor: MaterialStateProperty.all(Colors.blue[900]),
+          foregroundColor: MaterialStateProperty.all(Colors.white),),
         
         onPressed: onPressedFunc,
         
-        child: const Text('Answer 1'),
+        child: Text(answerText),
       ),
     );
   }
