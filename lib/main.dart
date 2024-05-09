@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget{
 class _MyAppState extends State<MyApp>{
   var _questionIndex = 0;
   
-  var questionsList = [
+  static const questionsList = [
     {
       'questionText': 'Do you wanna slap my cute ass?',
       'answers': ['Ye..Yes, Button-waifu... Mrs Button-waifu!', 'Wha... WHAT?! No, God, I wantn\'t!']
@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp>{
     },
     {
       'questionText': 'Where do you wanna be in my hot bed?',
-      'answers': ['Up! 0_0', 'Down...', 'Outside!']
+      'answers': ['Up! 0_0', 'Down...', 'Outside! >_<']
     },
   ];
 

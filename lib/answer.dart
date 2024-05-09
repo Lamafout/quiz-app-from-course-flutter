@@ -11,17 +11,23 @@ class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: 300,
+      margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
       child: ElevatedButton(
         style: 
         ButtonStyle(
-          overlayColor: MaterialStateProperty.all(Color.fromARGB(255, 81, 74, 146)),
+          overlayColor: MaterialStateProperty.all(const Color.fromARGB(255, 81, 74, 146)),
           backgroundColor: MaterialStateProperty.all(Colors.blue[900]),
-          foregroundColor: MaterialStateProperty.all(Colors.white),),
+          foregroundColor: MaterialStateProperty.all(Colors.white),
+          padding: MaterialStateProperty.all(const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0, bottom: 10.0))),
         
         onPressed: onPressedFunc,
         
-        child: Text(answerText),
+        child: Text(
+          answerText, 
+          style: const TextStyle(
+            fontSize: 15),
+            ),
       ),
     );
   }
