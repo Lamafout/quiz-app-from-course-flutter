@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
+  final VoidCallback resetFunc;
 
-  Result(this.resultScore);
+  Result(this.resultScore, this.resetFunc);
 
   String get resultText {
     String res;
     if (this.resultScore >= 2){
-      res = 'pussy boy! Congrats!';
+      res = 'veeeery boooring, umh...';
     }
     else{
-      res = 'veeeery boooring, umh...';
+      res = 'pussy boy! Congrats!';
     }
 
     return res;
@@ -22,7 +23,7 @@ class Result extends StatelessWidget {
     return Center(
       child: Container(
       width: 300,
-      height: 200,
+      height: 250,
       margin: EdgeInsets.only(
         bottom: 100
       ),
@@ -32,15 +33,28 @@ class Result extends StatelessWidget {
         color: Color.fromARGB(255, 36, 42, 147),
       ),
 
-      child: Center(
-        child: Text(
-          'It was final question, boy! Your result: you are ' + resultText,
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white
-          ),
-          ),
-      ),
+        child: Column(
+          children: [
+            Text(
+              'It was final question, boy! Your result: you are ' + resultText,
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white
+              ),
+              ),
+              Container(
+                width: 100,
+                margin: EdgeInsets.only(top: 30),
+
+                child: FloatingActionButton(
+                  onPressed: resetFunc,
+                  child: Text(
+                    'Restart Quiz!'
+                  ),
+                ),
+              )
+          ],
+        ),
     )
     );
   }
