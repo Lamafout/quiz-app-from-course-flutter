@@ -64,13 +64,14 @@ class _MyAppState extends State<MyApp>{
 
     return MaterialApp(
       home: Scaffold(
-      appBar: AppBar(
-        title: Text('Is is text in the Text Widget in the Scaffold Widget in the MaterialApp Widget LOL', 
-          style: TextStyle(
-            color: Colors.white)), 
-        backgroundColor: Color.fromRGBO(65, 65, 179, 1),),
-      body: (_questionIndex < _questionsList.length)? Quiz(questionsList: _questionsList, questionIndex: _questionIndex, answerQuestion: _answerQuestion,)
-      : Result(_totalScore, _resetResult)
-    ),);
+        appBar: AppBar(
+          title: Text('Horny quiz', 
+            style: TextStyle(
+              color: Colors.white)), 
+          backgroundColor: Color.fromRGBO(65, 65, 179, 1),),
+        body: (_questionIndex < _questionsList.length)
+          ? Quiz(questionsList: _questionsList, questionIndex: _questionIndex, answerQuestion: _answerQuestion,)
+          : Result(_totalScore, _resetResult)
+      ),);
   }
 }
