@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './quiz.dart';
+import './result.dart';
 
 void main(){
   runApp(MyApp());
@@ -41,8 +42,10 @@ class _MyAppState extends State<MyApp>{
   },
 ];
 
+  var _totalScore = 0;
 
-  void _answerQuestion(){
+  void _answerQuestion(int score){
+    _totalScore += score;
     setState(() {
       _questionIndex++;
     });
@@ -59,7 +62,7 @@ class _MyAppState extends State<MyApp>{
             color: Colors.white)), 
         backgroundColor: Color.fromRGBO(65, 65, 179, 1),),
       body: (_questionIndex < _questionsList.length)? Quiz(questionsList: _questionsList, questionIndex: _questionIndex, answerQuestion: _answerQuestion,)
-      : const Center(child: Text('Thx for your dirty answers, boy!'),),
+      : Result(_totalScore)
     ),);
   }
 }

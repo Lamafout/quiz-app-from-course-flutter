@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 class Answer extends StatelessWidget {
 
   final String answerText;
-  final VoidCallback onPressedFunc;
+  final onPressedFunc;
 
   Answer(this.answerText, this.onPressedFunc);
 
